@@ -113,35 +113,64 @@
 
         <!-- قسم القائمة -->
         <div class="max-w-2xl mx-auto mb-6">
-            <div class="flex flex-col sm:flex-row items-center sm:items-start p-4 gap-4">
-
-                <!-- النصوص -->
-                <div class="flex-1 text-center sm:text-right" dir="rtl">
-                    <h2 class="text-lg font-bold text-teal-700" data-ar="بيتزا مارجريتا" data-en="Pizza Margherita">
-                        بيتزا مارجريتا</h2>
-                    <p class="text-teal-600 text-sm leading-relaxed"
-                        data-ar="صلصة سان مارزانو، طماطم سان مارزانو الطازجة، بارميزان معتق، ريحان طازج، وزيت زيتون بكر ممتاز."
-                        data-en="San Marzano sauce, fresh San Marzano tomatoes, aged Parmesan, fresh basil, and extra virgin olive oil.">
-                        صلصة سان مارزانو، طماطم سان مارزانو الطازجة، بارميزان معتق، ريحان طازج،
-                        وزيت زيتون بكر ممتاز.
-                    </p>
-                    <div class="bg-teal-700 text-white font-bold px-4 py-2 rounded-lg">
-                        45.00 ﷼
-                    </div>
-                </div>
-
-                <!-- صورة المنتج -->
-                <img src="assets/header.jpg" alt="بيتزا مارجريتا" class="w-28 h-28 object-cover rounded-lg">
-
-                <!-- السعر -->
-
+            <div class="w-full py-3 px-6 flex justify-start">
+                <span class="text-2xl font-bold text-black" data-ar="البيتزا" data-en="Pizza">البيتزا</span>
             </div>
+            <div id="menu" class=""></div>
+
         </div>
-
-
-
         <!-- سكربت -->
         <script>
+            const menuItems = [
+                {
+                    nameAr: "بيتزا مارجريتا",
+                    nameEn: "Pizza Margherita",
+                    descAr: "صلصة سان مارزانو، طماطم سان مارزانو الطازجة، بارميزان معتق، ريحان طازج، وزيت زيتون بكر ممتاز.",
+                    descEn: "San Marzano sauce, fresh San Marzano tomatoes, aged Parmesan, fresh basil, and extra virgin olive oil.",
+                    price: "45.00 ﷼",
+                    image: "assets/Margherita.jpg"
+                },
+                {
+                    nameAr: "بيبروني كلاسيكا",
+                    nameEn: "Pepperoni Classica",
+                    descAr: "بيبروني مقرمش مع موزاريلا طازجة وبروفولوني مدخن. يقدم مع رشة من العسل.",
+                    descEn: "Crispy pepperoni with fresh mozzarella and smoked provolone. served with a drizzle of honey.",
+                    price: "45.00 ﷼",
+                    image: "assets/Pepperoni.jpg"
+                },
+                {
+                    nameAr: "بيتزا دجاج فريسكا",
+                    nameEn: "Chicken Fresca Pizza",
+                    descAr: "دجــاج مشـوي متبــل بالليمـــون والأعشــــاب الإيطاليــة، مــع صوص ريكوتا طازج، زبدة مكرملة، ونصف ليمونة حلوة مشوية.",
+                    descEn: "Grilled chicken marinated in lemon and Italian herbs, served with fresh ricotta sauce, caramelized butter, and half a grilled sweet lemon.",
+                    price: "55.00 ﷼",
+                    image: "assets/Fresca.jpg"
+                }
+            ];
+
+            const menuContainer = document.getElementById("menu");
+
+            menuItems.forEach(item => {
+                const card = `
+      <div class="flex flex-col sm:flex-row items-center sm:items-start p-4 gap-4">
+        <!-- النصوص -->
+        <div class="flex-1 text-center sm:text-right" dir="rtl">
+          <h2 class="text-xl font-bold text-teal-700" data-ar="${item.nameAr}" data-en="${item.nameEn}">
+            ${item.nameAr}
+          </h2>
+          <p class="text-teal-600 text-sm leading-relaxed" data-ar="${item.descAr}" data-en="${item.descEn}">
+            ${item.descAr}
+          </p>
+          <div class="bg-teal-700 text-white text-sm font-bold px-4 py-2 rounded-lg mt-2">
+            ${item.price}
+          </div>
+        </div>
+        <!-- صورة المنتج -->
+        <img src="${item.image}" alt="${item.nameAr}" class="w-28 h-28 object-fill rounded-lg">
+      </div>
+    `;
+                menuContainer.insertAdjacentHTML("beforeend", card);
+            });
             let currentLang = localStorage.getItem("lang") || "ar";
 
             function applyLanguage() {
