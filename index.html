@@ -8,12 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-    <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-        }
-    </style>
 
 </head>
 
@@ -24,12 +20,13 @@
         <header class="relative text-center">
             <img src="assets/header.jpg" alt="cover" class="w-full h-[220px] object-cover">
 
-            <!-- اللوجو الدائري -->
+            <!-- اللوجو الدائري في المنتصف -->
             <div
-                class="absolute -bottom-12 left-1/2 transform -translate-x-1/2 w-24 h-24 rounded-full bg-teal-700 border-4 border-[#f3eedd] flex items-center justify-center text-white font-bold text-lg">
+                class="absolute bottom-0 left-1/2 translate-y-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-teal-700 border-4 border-[#f3eedd] flex items-center justify-center text-white font-bold text-lg shadow-lg">
                 Feed
             </div>
         </header>
+
 
         <!-- Info / Title -->
         <div class="mt-16 text-center">
@@ -43,8 +40,12 @@
             </div>
 
             <!-- اسم المطعم -->
-            <h2 id="title" class="text-teal-700 text-2xl font-semibold" data-ar="فيد بيتزا" data-en="Feed Pizza">فيد
-                بيتزا</h2>
+            <h2 id="title" class="text-teal-700 text-2xl font-semibold text-center flex justify-center my-4"
+                data-ar="فيد بيتزا" data-en="Feed Pizza">
+                فيد بيتزا
+            </h2>
+
+
 
             <!-- أيقونات -->
             <div class="flex justify-center gap-6 mt-4 text-2xl text-black">
@@ -56,7 +57,7 @@
         </div>
 
         <!-- التصنيفات -->
-        <div class="overflow-x-auto">
+        <div class="sticky top-0 overflow-x-auto bg-orange-50/50 rounded z-10">
             <div class="flex space-x-6 px-4 py-6 w-max">
                 <!-- البيتزا -->
                 <!-- البيتزا -->
@@ -116,83 +117,37 @@
             <div class="w-full py-3 px-6 flex justify-start">
                 <span class="text-2xl font-bold text-black" data-ar="البيتزا" data-en="Pizza">البيتزا</span>
             </div>
-            <div id="menu" class=""></div>
+            <div id="menu-pizza" class=""></div>
+            <div class="w-full py-3 px-6 flex justify-start">
+                <span class="text-2xl font-bold text-black" data-ar="الباستا" data-en="Pasta">الباستا</span>
+            </div>
+            <div id="menu-pasta"></div>
+            <div class="w-full py-3 px-6 flex justify-start">
+                <span class="text-2xl font-bold text-black" data-ar="السلطات و المقبلات"
+                    data-en="Salads and Appetizers">السلطات و المقبلات</span>
+            </div>
+            <div id="menu-salad"></div>
+            <div class="w-full py-3 px-6 flex justify-start">
+                <span class="text-2xl font-bold text-black" data-ar="المشروبات الغازيه" data-en="Soft Drinks">
+                    المشروبات الغازيه</span>
+            </div>
+            <div id="menu-soda"></div>
 
         </div>
+        <hr class="border-teal-700 w-full">
+        <div class="flex justfiy-center text-center items-center gap-2 my-10">
+            <span
+                class="text-teal-700 bg-teal-300 rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold">
+                i
+            </span>
+            <h2 id="title" class="text-teal-700 text-2xl font-semibold text-center flex justify-center my-4"
+                data-ar="مسببات الحساسيه" data-en="Feed Pizza">
+                مسببات الحساسيه
+            </h2>
+        </div>
+        <hr class="border-teal-700 w-full">
         <!-- سكربت -->
-        <script>
-            const menuItems = [
-                {
-                    nameAr: "بيتزا مارجريتا",
-                    nameEn: "Pizza Margherita",
-                    descAr: "صلصة سان مارزانو، طماطم سان مارزانو الطازجة، بارميزان معتق، ريحان طازج، وزيت زيتون بكر ممتاز.",
-                    descEn: "San Marzano sauce, fresh San Marzano tomatoes, aged Parmesan, fresh basil, and extra virgin olive oil.",
-                    price: "45.00 ﷼",
-                    image: "assets/Margherita.jpg"
-                },
-                {
-                    nameAr: "بيبروني كلاسيكا",
-                    nameEn: "Pepperoni Classica",
-                    descAr: "بيبروني مقرمش مع موزاريلا طازجة وبروفولوني مدخن. يقدم مع رشة من العسل.",
-                    descEn: "Crispy pepperoni with fresh mozzarella and smoked provolone. served with a drizzle of honey.",
-                    price: "45.00 ﷼",
-                    image: "assets/Pepperoni.jpg"
-                },
-                {
-                    nameAr: "بيتزا دجاج فريسكا",
-                    nameEn: "Chicken Fresca Pizza",
-                    descAr: "دجــاج مشـوي متبــل بالليمـــون والأعشــــاب الإيطاليــة، مــع صوص ريكوتا طازج، زبدة مكرملة، ونصف ليمونة حلوة مشوية.",
-                    descEn: "Grilled chicken marinated in lemon and Italian herbs, served with fresh ricotta sauce, caramelized butter, and half a grilled sweet lemon.",
-                    price: "55.00 ﷼",
-                    image: "assets/Fresca.jpg"
-                }
-            ];
-
-            const menuContainer = document.getElementById("menu");
-
-            menuItems.forEach(item => {
-                const card = `
-      <div class="flex flex-col sm:flex-row items-center sm:items-start p-4 gap-4">
-        <!-- النصوص -->
-        <div class="flex-1 text-center sm:text-right" dir="rtl">
-          <h2 class="text-xl font-bold text-teal-700" data-ar="${item.nameAr}" data-en="${item.nameEn}">
-            ${item.nameAr}
-          </h2>
-          <p class="text-teal-600 text-sm leading-relaxed" data-ar="${item.descAr}" data-en="${item.descEn}">
-            ${item.descAr}
-          </p>
-          <div class="bg-teal-700 text-white text-sm font-bold px-4 py-2 rounded-lg mt-2">
-            ${item.price}
-          </div>
-        </div>
-        <!-- صورة المنتج -->
-        <img src="${item.image}" alt="${item.nameAr}" class="w-28 h-28 object-fill rounded-lg">
-      </div>
-    `;
-                menuContainer.insertAdjacentHTML("beforeend", card);
-            });
-            let currentLang = localStorage.getItem("lang") || "ar";
-
-            function applyLanguage() {
-                document.querySelectorAll("[data-ar]").forEach(el => {
-                    el.innerText = el.getAttribute("data-" + currentLang);
-                });
-
-                document.getElementById("langBtnText").innerText = currentLang === "ar" ? "English" : "العربية";
-
-                document.documentElement.setAttribute("dir", currentLang === "ar" ? "rtl" : "ltr");
-                document.documentElement.setAttribute("lang", currentLang);
-            }
-
-            function toggleLang() {
-                currentLang = currentLang === "ar" ? "en" : "ar";
-                localStorage.setItem("lang", currentLang);
-                applyLanguage();
-            }
-
-            window.addEventListener("DOMContentLoaded", applyLanguage);
-
-        </script>
+        <script src="script.js"></script>
 </body>
 
 </html>
