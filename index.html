@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="review.css">
 
 </head>
 
@@ -134,20 +134,95 @@
             <div id="menu-soda"></div>
 
         </div>
-        <hr class="border-teal-700 w-full">
-        <div class="flex justfiy-center text-center items-center gap-2 my-10">
-            <span
-                class="text-teal-700 bg-teal-300 rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold">
-                i
-            </span>
-            <h2 id="title" class="text-teal-700 text-2xl font-semibold text-center flex justify-center my-4"
-                data-ar="مسببات الحساسيه" data-en="Feed Pizza">
-                مسببات الحساسيه
-            </h2>
+        <div class="flex flex-col justify-center items-center text-teal-700 text-xl font-bold">
+            <hr class="border-teal-700 w-full">
+            <div class="flex items-center gap-2 my-10">
+                <span
+                    class="text-teal-700 bg-teal-300 rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold">
+                    i
+                </span>
+                <h1 data-ar="مسببات الحساسية" data-en="Allergens">مسببات الحساسية</h1>
+            </div>
+            <hr class="border-teal-700 w-full">
         </div>
-        <hr class="border-teal-700 w-full">
+        <div class="flex justify-between items-center px-10 py-10">
+            <!-- الزر -->
+            <button onclick="openModal()" data-ar="الملاحظات و التقيم" data-en="Leave Review"
+                class="bg-white text-teal-700  text-xl px-8 py-4 rounded-full shadow">
+                الملاحظات و التقيم
+            </button>
+
+            <!-- النص + الشعار -->
+            <div class="flex items-center space-x-2">
+                <span class="text-teal-700 font-medium" data-ar="صمم بحب من" data-en="Made with Love by">صمم بحب من
+                </span>
+                <img src="" alt="Ehab Alomawii" class="h-6" />
+            </div>
+        </div>
+        <!-- الملاحظه و التقيم -->
+        <div id="reviewModal" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+            <div class="modal-content bg-orange-50" onclick="event.stopPropagation()">
+                <button class="close-btn" onclick="closeModal()">×</button>
+
+                <div class="success-message" data-ar="✓ تم إرسال مراجعتك بنجاح!" data-en="Yor review has been sent ✓"
+                    id="successMessage">
+                    ✓ تم إرسال مراجعتك بنجاح!
+                </div>
+
+                <h2 class="text-2xl font-bold text-center mb-2" data-ar="اترك تقييمك" data-en="Leave Your Comment"
+                    style="color: #1a9aae;">
+                    اترك تقييمك
+                </h2>
+                <p class="text-center text-gray-600 mb-4" data-ar="نحن نقدر رأيك ونسعى لتحسين خدماتنا"
+                    data-en="We value your feedback and strive to improve our services">
+                    نحن نقدر رأيك ونسعى لتحسين خدماتنا
+                </p>
+                <!-- المراجعه  -->
+                <form id="reviewForm" onsubmit="submitReview(event)">
+                    <!-- Star Rating -->
+                    <div class="star-rating">
+                        <span class="star" data-rating="5" onclick="setRating(5)">★</span>
+                        <span class="star" data-rating="4" onclick="setRating(4)">★</span>
+                        <span class="star" data-rating="3" onclick="setRating(3)">★</span>
+                        <span class="star" data-rating="2" onclick="setRating(2)">★</span>
+                        <span class="star" data-rating="1" onclick="setRating(1)">★</span>
+                    </div>
+
+                    <p class="text-center text-gray-500 mb-4" id="ratingText" data-ar="اختر تقييمك"
+                        data-en="Select your rating">
+                        اختر تقييمك
+                    </p>
+
+                    <!-- Name Input -->
+                    <input type="text" class="form-input" placeholder="الاسم" id="nameInput" required>
+
+                    <!-- Email Input -->
+                    <input type="email" class="form-input" placeholder="البريد الإلكتروني" id="emailInput" required>
+
+                    <!-- Review Text -->
+                    <textarea class="form-input" placeholder="اكتب مراجعتك هنا..." id="reviewText" required></textarea>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        إرسال المراجعة
+                    </button>
+                </form>
+
+                <!-- Yalla Plus Footer -->
+                <div class="text-center mt-6 text-gray-500 text-sm">
+                    <div class="flex items-center justify-center gap-2">
+                        <span>Powered by</span>
+                        <div class="flex items-center gap-1">
+                            <span class="text-xl" style="color: #22c55e;">يلا</span>
+                            <span class="font-semibold">plus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- سكربت -->
         <script src="script.js"></script>
+        <script src="review.js"></script>
 </body>
 
 </html>

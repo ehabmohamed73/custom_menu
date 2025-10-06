@@ -1,0 +1,199 @@
+.review-btn {
+            background: white;
+            color: #1a9aae;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #f0f0f0;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .close-btn:hover {
+            background: #e0e0e0;
+            transform: rotate(90deg);
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+            flex-direction: row-reverse;
+        }
+
+        .star {
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: #ddd;
+            transition: all 0.2s ease;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #ffd700;
+            transform: scale(1.1);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #1a9aae;
+            box-shadow: 0 0 0 3px rgba(26, 154, 174, 0.1);
+        }
+
+        .submit-btn {
+            background: #1a9aae;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #158a9c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(26, 154, 174, 0.3);
+        }
+
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .yalla-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .yalla-icon {
+            color: #22c55e;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .success-message {
+            background: #22c55e;
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
