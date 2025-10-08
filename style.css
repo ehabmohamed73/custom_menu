@@ -1,3 +1,15 @@
 body {
-    font-family: 'Cairo', sans-serif;
- }
+    font-family: 'Cairo', sans-serif;/* يخفي شريط التمرير من جميع العناصر في الصفحة */
+}
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer و Edge القديم */
+}
+
+*::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  display: none; /* Chrome, Safari, Edge */
+}
+
+
