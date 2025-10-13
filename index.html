@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html class="scroll-smooth" lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -57,11 +57,15 @@
         </div>
 
         <!-- التصنيفات -->
-        <div class="sticky top-0 overflow-x-auto bg-orange-50/50 rounded z-10">
-            <div class="flex space-x-6 px-4 py-6 w-max">
+        <!-- اجعل <html> أو <body> سلس عند التمرير -->
+
+
+        <!-- التصنيفات -->
+        <div class="sticky flex justify-center top-0 overflow-x-auto bg-orange-50/50 rounded z-10">
+            <div class="flex justify-center text-center space-x-6 px-4 py-6 w-max">
+
                 <!-- البيتزا -->
-                <!-- البيتزا -->
-                <a href="#pizza_link">
+                <a href="#pizza_link" class="block">
                     <div class="flex flex-col items-center text-center cursor-pointer w-24">
                         <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
                             <img src="assets/pizza1.svg" alt="بيتزا" class="w-12 h-12">
@@ -71,7 +75,7 @@
                 </a>
 
                 <!-- الباستا -->
-                <a href="#pasta_link">
+                <a href="#pasta_link" class="block">
                     <div class="flex flex-col items-center text-center cursor-pointer w-24">
                         <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
                             <img src="assets/pasta1.svg" alt="الباستا" class="w-12 h-12">
@@ -81,7 +85,7 @@
                 </a>
 
                 <!-- السلطات -->
-                <a href="#sald_link">
+                <a href="#sald_link" class="block">
                     <div class="flex flex-col items-center text-center cursor-pointer w-24">
                         <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
                             <i class="fa-solid fa-bowl-food text-white text-4xl"></i>
@@ -90,13 +94,13 @@
                     </div>
                 </a>
 
-                <!-- المشروبات الغازية -->
-                <a href="#soda_link">
+                <!-- المشروبات -->
+                <a href="#soda_link" class="block">
                     <div class="flex flex-col items-center text-center cursor-pointer w-24">
                         <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
                             <i class="fa-solid fa-wine-bottle text-white text-4xl"></i>
                         </div>
-                        <span class="mt-2 text-sm text-center" data-ar="المشروبات" data-en="Soft Drinks"></span>
+                        <span class="mt-2 text-sm" data-ar="المشروبات" data-en="Soft Drinks">المشروبات</span>
                     </div>
                 </a>
 
@@ -121,26 +125,32 @@
 
         <!-- قسم القائمة -->
         <div class="max-w-2xl mx-auto mb-6">
-            <div id="#" class="w-full py-3 px-6 flex justify-start">
+            <!-- المهم: اضف id مطابق للرابط، و اضف scroll-mt-24 -->
+            <div id="pizza_link" class="w-full py-3 px-6 flex justify-start scroll-mt-24">
                 <span class="text-2xl font-bold text-black" data-ar="البيتزا" data-en="Pizza">البيتزا</span>
             </div>
-            <div id="menu-pizza" class=""></div>
-            <div id="pasta_link" class="w-full py-3 px-6 flex justify-start">
+            <div id="menu-pizza" class="pb-6"></div>
+
+            <div id="pasta_link" class="w-full py-3 px-6 flex justify-start scroll-mt-24">
                 <span class="text-2xl font-bold text-black" data-ar="الباستا" data-en="Pasta">الباستا</span>
             </div>
-            <div id="menu-pasta"></div>
-            <div id="sald_link" class="w-full py-3 px-6 flex justify-start">
+            <div id="menu-pasta" class="pb-6"></div>
+
+            <div id="sald_link" class="w-full py-3 px-6 flex justify-start scroll-mt-24">
                 <span class="text-2xl font-bold text-black" data-ar="السلطات و المقبلات"
                     data-en="Salads and Appetizers">السلطات و المقبلات</span>
             </div>
-            <div id="menu-salad"></div>
-            <div id="soda_link" class="w-full py-3 px-6 flex justify-start">
-                <span class="text-2xl font-bold text-black" data-ar="المشروبات الغازيه" data-en="Soft Drinks">
-                    المشروبات الغازيه</span>
-            </div>
-            <div id="menu-soda"></div>
+            <div id="menu-salad" class="pb-6"></div>
 
+            <div id="soda_link" class="w-full py-3 px-6 flex justify-start scroll-mt-24">
+                <span class="text-2xl font-bold text-black" data-ar="المشروبات الغازيه" data-en="Soft Drinks">المشروبات
+                    الغازيه</span>
+            </div>
+            <div id="menu-soda" class="pb-6"></div>
         </div>
+
+
+
         <div class="flex flex-col justify-center items-center text-teal-700 text-xl font-bold">
             <hr class="border-teal-700 w-full">
             <div class="flex items-center gap-2 my-10">

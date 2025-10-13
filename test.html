@@ -7,6 +7,10 @@
     <title>Feed Pizza</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="review.css">
+
 </head>
 
 <body class="text-gray-800 font-tahoma flex justify-center">
@@ -16,12 +20,13 @@
         <header class="relative text-center">
             <img src="assets/header.jpg" alt="cover" class="w-full h-[220px] object-cover">
 
-            <!-- اللوجو الدائري -->
+            <!-- اللوجو الدائري في المنتصف -->
             <div
-                class="absolute -bottom-12 left-1/2 transform -translate-x-1/2 w-24 h-24 rounded-full bg-teal-700 border-4 border-[#f3eedd] flex items-center justify-center text-white font-bold text-lg">
+                class="absolute bottom-0 left-1/2 translate-y-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-teal-700 border-4 border-[#f3eedd] flex items-center justify-center text-white font-bold text-lg shadow-lg">
                 Feed
             </div>
         </header>
+
 
         <!-- Info / Title -->
         <div class="mt-16 text-center">
@@ -35,8 +40,12 @@
             </div>
 
             <!-- اسم المطعم -->
-            <h2 id="title" class="text-teal-700 text-2xl font-semibold" data-ar="فيد بيتزا" data-en="Feed Pizza">فيد
-                بيتزا</h2>
+            <h2 id="title" class="text-teal-700 text-2xl font-semibold text-center flex justify-center my-4"
+                data-ar="فيد بيتزا" data-en="Feed Pizza">
+                فيد بيتزا
+            </h2>
+
+
 
             <!-- أيقونات -->
             <div class="flex justify-center gap-6 mt-4 text-2xl text-black">
@@ -48,42 +57,49 @@
         </div>
 
         <!-- التصنيفات -->
-        <div class="overflow-x-auto">
-            <div class="flex space-x-6 px-4 py-6 w-max">
+        <div class="sticky flex justify-center top-0 overflow-x-auto bg-orange-50/50 rounded z-10">
+            <div class="flex justify-center text-center space-x-6 px-4 py-6 w-max">
+
                 <!-- البيتزا -->
-                <!-- البيتزا -->
-                <div class="flex flex-col items-center text-center cursor-pointer w-24">
-                    <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
-                        <img src="assets/pizza1.svg" alt="بيتزا" class="w-12 h-12">
+                <a href="#pizza_link">
+                    <div class="flex flex-col items-center text-center cursor-pointer w-24">
+                        <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
+                            <img src="assets/pizza1.svg" alt="بيتزا" class="w-12 h-12">
+                        </div>
+                        <span class="mt-2 text-sm" data-ar="البيتزا" data-en="Pizza">البيتزا</span>
                     </div>
-                    <span class="mt-2 text-sm" data-ar="البيتزا" data-en="Pizza">البيتزا</span>
-                </div>
+                </a>
 
                 <!-- الباستا -->
-                <div class="flex flex-col items-center text-center cursor-pointer w-24">
-                    <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
-                        <img src="assets/pasta1.svg" alt="الباستا" class="w-12 h-12">
+                <a href="#pasta_link">
+                    <div class="flex flex-col items-center text-center cursor-pointer w-24">
+                        <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
+                            <img src="assets/pasta1.svg" alt="الباستا" class="w-12 h-12">
+                        </div>
+                        <span class="mt-2 text-sm" data-ar="الباستا" data-en="Pasta">الباستا</span>
                     </div>
-                    <span class="mt-2 text-sm" data-ar="الباستا" data-en="Pasta">الباستا</span>
-                </div>
+                </a>
+
 
                 <!-- السلطات -->
-                <div class="flex flex-col items-center text-center cursor-pointer w-24">
-                    <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
-                        <i class="fa-solid fa-bowl-food text-white text-4xl"></i>
+                <a href="#sald_link">
+                    <div class="flex flex-col items-center text-center cursor-pointer w-24">
+                        <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
+                            <i class="fa-solid fa-bowl-food text-white text-4xl"></i>
+                        </div>
+                        <span class="mt-2 text-sm" data-ar="السلطات" data-en="Salads">السلطات</span>
                     </div>
-                    <span class="mt-2 text-sm" data-ar="السلطات" data-en="Salads">السلطات</span>
-                </div>
+                </a>
 
                 <!-- المشروبات الغازية -->
-                <div class="flex flex-col items-center text-center cursor-pointer w-24">
-                    <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
-                        <i class="fa-solid fa-wine-bottle text-white text-4xl"></i>
+                <a href="#soda_link">
+                    <div class="flex flex-col items-center text-center cursor-pointer w-24">
+                        <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
+                            <i class="fa-solid fa-wine-bottle text-white text-4xl"></i>
+                        </div>
+                        <span class="mt-2 text-sm text-center" data-ar="المشروبات" data-en="Soft Drinks"></span>
                     </div>
-                    <span class="mt-2 text-sm" data-ar="المشروبات الغازية" data-en="Soft Drinks">المشروبات
-                        الغازية</span>
-                </div>
-
+                </a>
                 <!-- الحلويات -->
                 <div class="flex flex-col items-center text-center cursor-pointer w-24">
                     <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
@@ -104,171 +120,117 @@
         </div>
 
         <!-- قسم القائمة -->
-        <section class="bg-[#f3eedd] mt-10 p-6 rounded-lg">
+        <div class="max-w-2xl mx-auto mb-6">
+            <div id="#" class="w-full py-3 px-6 flex justify-start">
+                <span class="text-2xl font-bold text-black" data-ar="البيتزا" data-en="Pizza">البيتزا</span>
+            </div>
+            <div id="menu-pizza" class=""></div>
+            <div id="pasta_link" class="w-full py-3 px-6 flex justify-start">
+                <span class="text-2xl font-bold text-black" data-ar="الباستا" data-en="Pasta">الباستا</span>
+            </div>
 
-            <!-- العنوان + أزرار العرض -->
-            <div class="flex items-center justify-between mb-6">
-                <h2 class="text-2xl font-bold text-teal-700" id="pizzaTitle" data-ar="البيتزا" data-en="Pizza">البيتزا
+            <div id="menu-pasta" class="scroll-mt-24"></div>
+            <div id="sald_link" class="w-full py-3 px-6 flex justify-start">
+                <span class="text-2xl font-bold text-black" data-ar="السلطات و المقبلات"
+                    data-en="Salads and Appetizers">السلطات و المقبلات</span>
+            </div>
+            <div id="menu-salad"></div>
+            <div id="soda_link" class="w-full py-3 px-6 flex justify-start">
+                <span class="text-2xl font-bold text-black" data-ar="المشروبات الغازيه" data-en="Soft Drinks">
+                    المشروبات الغازيه</span>
+            </div>
+            <div id="menu-soda"></div>
+
+        </div>
+        <div class="flex flex-col justify-center items-center text-teal-700 text-xl font-bold">
+            <hr class="border-teal-700 w-full">
+            <div class="flex items-center gap-2 my-10">
+                <span
+                    class="text-teal-700 bg-teal-300 rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold">
+                    i
+                </span>
+                <h1 data-ar="مسببات الحساسية" data-en="Allergens">مسببات الحساسية</h1>
+            </div>
+            <hr class="border-teal-700 w-full">
+        </div>
+        <div class="flex justify-between items-center px-10 py-10">
+            <!-- الزر -->
+            <button onclick="openModal()" data-ar="الملاحظات و التقيم" data-en="Leave Review"
+                class="bg-white text-teal-700  text-xl px-8 py-4 rounded-full shadow">
+                الملاحظات و التقيم
+            </button>
+
+            <!-- النص + الشعار -->
+            <div class="flex items-center space-x-2">
+                <span class="text-teal-700 font-medium" data-ar="صمم بحب من" data-en="Made with Love by">صمم بحب من
+                </span>
+                <img src="" alt="Ehab Alomawii" class="h-6" />
+            </div>
+        </div>
+        <!-- الملاحظه و التقيم -->
+        <div id="reviewModal" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+            <div class="modal-content bg-orange-50" onclick="event.stopPropagation()">
+                <button class="close-btn" onclick="closeModal()">×</button>
+
+                <div class="success-message" data-ar="✓ تم إرسال مراجعتك بنجاح!" data-en="Yor review has been sent ✓"
+                    id="successMessage">
+                    ✓ تم إرسال مراجعتك بنجاح!
+                </div>
+
+                <h2 class="text-2xl font-bold text-center mb-2" data-ar="اترك تقييمك" data-en="Leave Your Comment"
+                    style="color: #1a9aae;">
+                    اترك تقييمك
                 </h2>
-
-            </div>
-
-            <!-- قائمة المنتجات -->
-            <div id="productsContainer" class="space-y-6">
-                <div class="flex items-start gap-4 bg-white rounded-lg p-3 shadow-sm">
-                    <img src="assets/header.jpg" alt="بيتزا" class="w-24 h-24 object-cover rounded-md">
-                    <div class="flex-1">
-                        <h3 class="text-teal-700 font-semibold" data-ar="بيتزا مارغريتا" data-en="Margherita Pizza">
-                            بيتزا مارغريتا</h3>
-                        <p class="text-gray-600 text-sm mt-1" data-ar="صلصة سان مارزانو، جبنة طازجة، ريحان."
-                            data-en="San Marzano sauce, fresh cheese, basil.">
-                            صلصة سان مارزانو، جبنة طازجة، ريحان.
-                        </p>
+                <p class="text-center text-gray-600 mb-4" data-ar="نحن نقدر رأيك ونسعى لتحسين خدماتنا"
+                    data-en="We value your feedback and strive to improve our services">
+                    نحن نقدر رأيك ونسعى لتحسين خدماتنا
+                </p>
+                <!-- المراجعه  -->
+                <form id="reviewForm" onsubmit="submitReview(event)">
+                    <!-- Star Rating -->
+                    <div class="star-rating">
+                        <span class="star" data-rating="5" onclick="setRating(5)">★</span>
+                        <span class="star" data-rating="4" onclick="setRating(4)">★</span>
+                        <span class="star" data-rating="3" onclick="setRating(3)">★</span>
+                        <span class="star" data-rating="2" onclick="setRating(2)">★</span>
+                        <span class="star" data-rating="1" onclick="setRating(1)">★</span>
                     </div>
-                    <div><span class="bg-teal-700 text-white px-3 py-1 rounded-md text-sm font-bold">45.00 ﷼</span>
+
+                    <p class="text-center text-gray-500 mb-4" id="ratingText" data-ar="اختر تقييمك"
+                        data-en="Select your rating">
+                        اختر تقييمك
+                    </p>
+
+                    <!-- Name Input -->
+                    <input type="text" class="form-input" placeholder="الاسم" id="nameInput" required>
+
+                    <!-- Email Input -->
+                    <input type="email" class="form-input" placeholder="البريد الإلكتروني" id="emailInput" required>
+
+                    <!-- Review Text -->
+                    <textarea class="form-input" placeholder="اكتب مراجعتك هنا..." id="reviewText" required></textarea>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        إرسال المراجعة
+                    </button>
+                </form>
+
+                <!-- Yalla Plus Footer -->
+                <div class="text-center mt-6 text-gray-500 text-sm">
+                    <div class="flex items-center justify-center gap-2">
+                        <span>Powered by</span>
+                        <div class="flex items-center gap-1">
+                            <span class="text-xl" style="color: #22c55e;">يلا</span>
+                            <span class="font-semibold">plus</span>
+                        </div>
                     </div>
                 </div>
-                <div class="flex items-start gap-4 bg-white rounded-lg p-3 shadow-sm">
-                    <img src="assets/header.jpg" alt="بيتزا" class="w-24 h-24 object-cover rounded-md">
-                    <div class="flex-1">
-                        <h3 class="text-teal-700 font-semibold" data-ar="بيتزا مارغريتا" data-en="Margherita Pizza">
-                            بيتزا مارغريتا</h3>
-                        <p class="text-gray-600 text-sm mt-1" data-ar="صلصة سان مارزانو، جبنة طازجة، ريحان."
-                            data-en="San Marzano sauce, fresh cheese, basil.">
-                            صلصة سان مارزانو، جبنة طازجة، ريحان.
-                        </p>
-                    </div>
-                    <div><span class="bg-teal-700 text-white px-3 py-1 rounded-md text-sm font-bold">45.00 ﷼</span>
-                    </div>
-                </div>
-
             </div>
-        </section>
-
-    </div>
-
-    <!-- سكربت -->
-    <script>
-        let currentLang = localStorage.getItem("lang") || "ar";
-
-        function applyLanguage() {
-            document.querySelectorAll("[data-ar]").forEach(el => {
-                el.innerText = el.getAttribute("data-" + currentLang);
-            });
-
-            document.getElementById("langBtnText").innerText = currentLang === "ar" ? "English" : "العربية";
-
-            document.documentElement.setAttribute("dir", currentLang === "ar" ? "rtl" : "ltr");
-            document.documentElement.setAttribute("lang", currentLang);
-        }
-
-        function toggleLang() {
-            currentLang = currentLang === "ar" ? "en" : "ar";
-            localStorage.setItem("lang", currentLang);
-            applyLanguage();
-        }
-
-        window.addEventListener("DOMContentLoaded", applyLanguage);
-
-    </script>
+        </div>
+        <!-- سكربت -->
+        <script src="script.js"></script>
+        <script src="review.js"></script>
 </body>
 
 </html>
-
-<div class="flex flex-col sm:flex-row items-center sm:items-start p-4 gap-4">
-    <!-- النصوص -->
-    <div class="flex-1 text-center sm:text-right" dir="rtl">
-        <h2 class="text-lg font-bold text-teal-700" data-ar="بيتزا مارجريتا" data-en="Pizza Margherita">
-            بيتزا مارجريتا</h2>
-        <p class="text-teal-600 text-sm leading-relaxed"
-            data-ar="صلصة سان مارزانو، طماطم سان مارزانو الطازجة، بارميزان معتق، ريحان طازج، وزيت زيتون بكر ممتاز."
-            data-en="San Marzano sauce, fresh San Marzano tomatoes, aged Parmesan, fresh basil, and extra virgin olive oil.">
-            صلصة سان مارزانو، طماطم سان مارزانو الطازجة، بارميزان معتق، ريحان طازج،
-            وزيت زيتون بكر ممتاز.
-        </p>
-        <div class="bg-teal-700 text-white font-bold px-4 py-2 rounded-lg mt-4">
-            45.00 ﷼
-        </div>
-    </div>
-
-    <!-- صورة المنتج -->
-    <img src="assets/Margherita.jpg" alt="بيتزا مارجريتا" class="w-28 h-28 object-cover rounded-lg">
-
-    <!-- السعر -->
-
-</div>
-<div class="flex flex-col sm:flex-row items-center sm:items-start p-4 gap-4">
-    <!-- النصوص -->
-    <div class="flex-1 text-center sm:text-right" dir="rtl">
-        <h2 class="text-lg font-bold text-teal-700" data-ar="بيبروني كلاسيكا" data-en="Pepperoni Classica">
-            بيبروني كلاسيكا</h2>
-        <p class="text-teal-600 text-sm leading-relaxed"
-            data-ar="بيبروني مقرمش مع موزاريلا طازجة وبروفولوني مدخن. يقدم مع رشة من العسل."
-            data-en="Crispy pepperoni with fresh mozzarella and smoked provolone. served with a drizzle of honey.">
-            بيبروني مقرمش مع موزاريلا طازجة وبروفولوني مدخن. يقدم مع رشة من العسل.
-        </p>
-        <div class="bg-teal-700 text-white font-bold px-4 py-2 rounded-lg mt-4">
-            45.00 ﷼
-        </div>
-    </div>
-
-    <!-- صورة المنتج -->
-    <img src="assets/Pepperoni.jpg" alt="بيتزا مارجريتا" class="w-28 h-28 object-cover rounded-lg">
-
-    <!-- السعر -->
-
-</div>
-<div class="flex flex-col sm:flex-row items-center sm:items-start p-4 gap-4">
-    <!-- النصوص -->
-    <div class="flex-1 text-center sm:text-right" dir="rtl">
-        <h2 class="text-lg font-bold text-teal-700" data-ar="بيتزا دجاج فريسكا" data-en="Chicken Fresca Pizza">
-            بيتزا دجاج فريسكا</h2>
-        <p class="text-teal-600 text-sm leading-relaxed"
-            data-ar="دجــاج مشـوي متبــل بالليمـــون والأعشــــاب الإيطاليــة، مــع صوص ريكوتا طازج، زبدة مكرملة، ونصف ليمونة حلوة مشوية."
-            data-en="Grilled chicken marinated in lemon and Italian herbs, served with fresh ricotta sauce, caramelized butter, and half a grilled sweet lemon.">
-            دجــاج مشـوي متبــل بالليمـــون والأعشــــاب الإيطاليــة، مــع صوص ريكوتا طازج، زبدة مكرملة،
-            ونصف ليمونة حلوة مشوية.
-        </p>
-        <div class="bg-teal-700 text-white font-bold px-4 py-2 rounded-lg mt-4">
-            55.00 ﷼
-        </div>
-    </div>
-    <hr class="border-teal-700 w-full">
-    <div class="flex justfiy-center text-center items-center gap-2 my-10">
-        <span
-            class="text-teal-700 bg-teal-300 rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold">
-            i
-        </span>
-        <h2 id="title" class="text-teal-700 text-xl font-semibold text-center flex justify-center my-4"
-            data-ar="مسببات الحساسيه" data-en="Allergens">
-            مسببات الحساسيه
-        </h2>
-    </div>
-    <hr class="border-teal-700 w-full">
-    <!-- صورة المنتج -->
-    <img src="assets/Fresca.jpg" alt="بيتزا مارجريتا" class="w-28 h-28 object-cover rounded-lg">
-
-    <!-- السعر -->
-
-</div>
-
-<!-- let currentLang = localStorage.getItem("lang") || "ar";
-
-function applyLanguage() {
-document.querySelectorAll("[data-ar]").forEach(el => {
-el.innerText = el.getAttribute("data-" + currentLang);
-});
-
-document.getElementById("langBtnText").innerText = currentLang === "ar" ? "English" : "العربية";
-
-document.documentElement.setAttribute("dir", currentLang === "ar" ? "rtl" : "ltr");
-document.documentElement.setAttribute("lang", currentLang);
-}
-
-function toggleLang() {
-currentLang = currentLang === "ar" ? "en" : "ar";
-localStorage.setItem("lang", currentLang);
-applyLanguage();
-}
-
-window.addEventListener("DOMContentLoaded", applyLanguage); -->
