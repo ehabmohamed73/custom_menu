@@ -14,11 +14,17 @@
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <!-- AOS JS -->
-
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,  // سرعة الحركة (بالملي ثانية)
+            once: true,     // تظهر الحركة مرة وحدة فقط
+        });
+    </script>
 </head>
 
-<body class="text-gray-800 font-tahoma flex justify-center ">
-    <div class="m-auto w-100 bg-orange-50 h-screen overflow-y-auto scroll-smooth">
+<body class="text-gray-800 font-tahoma flex justify-center scroll-smooth">
+    <div class="m-auto w-100 bg-orange-50 h-screen overflow-y-auto">
 
         <!-- Header -->
         <header class="relative text-center">
@@ -65,7 +71,7 @@
 
 
         <!-- التصنيفات -->
-        <div class="sticky flex justify-center top-0 overflow-x-auto bg-orange-50/90 rounded z-10">
+        <div class="sticky flex justify-center top-0 overflow-x-auto bg-orange-50/50 rounded z-10">
             <div class="flex justify-center text-center space-x-6 px-4 py-6 w-max">
 
                 <!-- البيتزا -->
@@ -244,13 +250,6 @@
         <!-- سكربت -->
         <script src="script.js"></script>
         <script src="review.js"></script>
-        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-        <script>
-            AOS.init({
-                duration: 900,  // سرعة الحركة (بالملي ثانية)
-                once: true,     // تظهر الحركة مرة وحدة فقط
-            });
-        </script>
 </body>
 
 </html>
