@@ -17,11 +17,10 @@
 
 </head>
 
-<body class="text-gray-800 font-tahoma flex justify-center ">
-    <div class="m-auto w-100 bg-orange-50 h-screen overflow-y-auto scroll-smooth">
-
+<body class="text-gray-800 flex justify-center ">
+    <div class="m-auto w-100  h-screen overflow-y-auto scroll-smooth">
         <!-- Header -->
-        <header class="relative text-center">
+        <header class="relative text-center bg-orange-100 ">
             <img src="assets/header.jpg" alt="cover" class="w-full h-[220px] object-cover">
 
             <!-- اللوجو الدائري في المنتصف -->
@@ -30,11 +29,8 @@
                 Feed
             </div>
         </header>
-
-
         <!-- Info / Title -->
-        <div class="mt-16 text-center">
-
+        <div class="pt-16 text-center bg-orange-100 z-10">
             <!-- زر اللغة -->
             <div class="flex justify-end px-6 mb-2 lang-toggle">
                 <button onclick="toggleLang()" class="flex items-center gap-1 text-teal-700">
@@ -59,198 +55,121 @@
                 <a href="#" class="hover:text-teal-700"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-
         <!-- التصنيفات -->
-        <!-- اجعل <html> أو <body> سلس عند التمرير -->
-
-
-        <!-- التصنيفات -->
-        <div class="sticky flex justify-center top-0 overflow-x-auto bg-orange-50/90 rounded z-10">
-            <div class="flex justify-center text-center space-x-6 px-4 py-6 w-max">
-
-                <!-- البيتزا -->
-                <a href="#pizza_link" class="block">
-                    <div class="flex flex-col items-center text-center cursor-pointer w-24">
-                        <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
-                            <img src="assets/pizza1.svg" alt="بيتزا" class="w-12 h-12">
-                        </div>
-                        <span class="mt-2 text-sm" data-ar="البيتزا" data-en="Pizza">البيتزا</span>
-                    </div>
-                </a>
-
-                <!-- الباستا -->
-                <a href="#pasta_link" class="block">
-                    <div class="flex flex-col items-center text-center cursor-pointer w-24">
-                        <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
-                            <img src="assets/pasta1.svg" alt="الباستا" class="w-12 h-12">
-                        </div>
-                        <span class="mt-2 text-sm" data-ar="الباستا" data-en="Pasta">الباستا</span>
-                    </div>
-                </a>
-
-                <!-- السلطات -->
-                <a href="#sald_link" class="block">
-                    <div class="flex flex-col items-center text-center cursor-pointer w-24">
-                        <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
-                            <i class="fa-solid fa-bowl-food text-white text-4xl"></i>
-                        </div>
-                        <span class="mt-2 text-sm" data-ar="السلطات" data-en="Salads">السلطات</span>
-                    </div>
-                </a>
-
-                <!-- المشروبات -->
-                <a href="#soda_link" class="block">
-                    <div class="flex flex-col items-center text-center cursor-pointer w-24">
-                        <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
-                            <i class="fa-solid fa-wine-bottle text-white text-4xl"></i>
-                        </div>
-                        <span class="mt-2 text-sm" data-ar="المشروبات" data-en="Soft Drinks">المشروبات</span>
-                    </div>
-                </a>
-
-                <!-- الحلويات -->
-                <div class="flex flex-col items-center text-center cursor-pointer w-24">
-                    <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
-                        <i class="fa-solid fa-cake-candles text-white text-4xl"></i>
-                    </div>
-                    <span class="mt-2 text-sm" data-ar="الحلويات" data-en="Desserts">الحلويات</span>
-                </div>
-
-                <!-- الصوص -->
-                <div class="flex flex-col items-center text-center cursor-pointer w-24">
-                    <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
-                        <img src="assets/sauce.svg" alt="صوص" class="w-12 h-12">
-                    </div>
-                    <span class="mt-2 text-sm" data-ar="صوص" data-en="Sauces">صوص</span>
-                </div>
-
+        <div
+            class="sticky flex justify-center  grid-cols-3 xs:grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-2 sm:gap-3 md:gap-4 px-2 sm:px-4 top-0 overflow-x-auto bg-orange-100/90 rounded z-10">
+            <div id="front-categories" class="flex justify-center text-center space-x-6 px-4 py-6 w-max">
             </div>
         </div>
-
         <!-- قسم القائمة -->
-        <div class="max-w-2xl mx-auto mb-6">
-            <!-- المهم: اضف id مطابق للرابط، و اضف scroll-mt-24 -->
-            <div id="pizza_link" class="w-full py-3 px-6 flex justify-start scroll-mt-[150px]">
-                <span class="text-2xl font-bold text-black" data-ar="البيتزا" data-en="Pizza">البيتزا</span>
+        <div class="rounded-t-lg bg-orange-200/90  pb-10">
+            <div class="w-10 h-1 bg-teal-700 rounded-full shadow-md mx-auto"></div>
+            <div id="front-items" class="max-w-2xl mx-auto mb-6">
+                <!-- المهم: اضف id مطابق للرابط، و اضف scroll-mt-24 -->
+
             </div>
-            <div id="menu-pizza" class="pb-6"></div>
-
-            <div id="pasta_link" class="w-full py-3 px-6 flex justify-start scroll-mt-[150px]">
-                <span class="text-2xl font-bold text-black" data-ar="الباستا" data-en="Pasta">الباستا</span>
-            </div>
-            <div id="menu-pasta" class="pb-6"></div>
-
-            <div id="sald_link" class="w-full py-3 px-6 flex justify-start scroll-mt-[150px]">
-                <span class="text-2xl font-bold text-black" data-ar="السلطات و المقبلات"
-                    data-en="Salads and Appetizers">السلطات و المقبلات</span>
-            </div>
-            <div id="menu-salad" class="pb-6"></div>
-
-            <div id="soda_link" class="w-full py-3 px-6 flex justify-start scroll-mt-[150px]">
-                <span class="text-2xl font-bold text-black" data-ar="المشروبات الغازيه" data-en="Soft Drinks">المشروبات
-                    الغازيه</span>
-            </div>
-            <div id="menu-soda" class="pb-6"></div>
-        </div>
 
 
 
-        <div class="flex flex-col justify-center items-center text-teal-700 text-xl font-bold">
-            <hr class="border-teal-700 w-full">
-            <div class="flex items-center gap-2 my-10">
-                <span
-                    class="text-teal-700 bg-teal-300 rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold">
-                    i
-                </span>
-                <h1 data-ar="مسببات الحساسية" data-en="Allergens">مسببات الحساسية</h1>
-            </div>
-            <hr class="border-teal-700 w-full">
-        </div>
-        <div class="flex justify-between items-center px-10 py-10">
-            <!-- الزر -->
-            <button onclick="openModal()" data-ar="الملاحظات و التقيم" data-en="Leave Review"
-                class="bg-white text-teal-700  text-xl px-8 py-4 rounded-full shadow">
-                الملاحظات و التقيم
-            </button>
-
-            <!-- النص + الشعار -->
-            <div class="flex items-center space-x-2">
-                <span class="text-teal-700 font-medium" data-ar="صمم بحب من" data-en="Made with Love by">صمم بحب من
-                </span>
-                <img src="" alt="Ehab Alomawii" class="h-6" />
-            </div>
-        </div>
-        <!-- الملاحظه و التقيم -->
-        <div id="reviewModal" class="modal-overlay" onclick="closeModalOnOverlay(event)">
-            <div class="modal-content bg-orange-50" onclick="event.stopPropagation()">
-                <button class="close-btn" onclick="closeModal()">×</button>
-
-                <div class="success-message" data-ar="✓ تم إرسال مراجعتك بنجاح!" data-en="Yor review has been sent ✓"
-                    id="successMessage">
-                    ✓ تم إرسال مراجعتك بنجاح!
+            <div class="flex flex-col justify-center items-center text-teal-700 text-xl font-bold">
+                <hr class="border-teal-700 w-full">
+                <div class="flex items-center gap-2 my-10">
+                    <span
+                        class="text-teal-700 bg-teal-300 rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold">
+                        i
+                    </span>
+                    <h1 data-ar="مسببات الحساسية" data-en="Allergens">مسببات الحساسية</h1>
                 </div>
+                <hr class="border-teal-700 w-full">
+            </div>
+            <div class="flex justify-between items-center px-10 py-10">
+                <!-- الزر -->
+                <button onclick="openModal()" data-ar="الملاحظات و التقيم" data-en="Leave Review"
+                    class="bg-white text-teal-700  text-xl px-8 py-4 rounded-full shadow">
+                    الملاحظات و التقيم
+                </button>
 
-                <h2 class="text-2xl font-bold text-center mb-2" data-ar="اترك تقييمك" data-en="Leave Your Comment"
-                    style="color: #1a9aae;">
-                    اترك تقييمك
-                </h2>
-                <p class="text-center text-gray-600 mb-4" data-ar="نحن نقدر رأيك ونسعى لتحسين خدماتنا"
-                    data-en="We value your feedback and strive to improve our services">
-                    نحن نقدر رأيك ونسعى لتحسين خدماتنا
-                </p>
-                <!-- المراجعه  -->
-                <form id="reviewForm" onsubmit="submitReview(event)">
-                    <!-- Star Rating -->
-                    <div class="star-rating">
-                        <span class="star" data-rating="5" onclick="setRating(5)">★</span>
-                        <span class="star" data-rating="4" onclick="setRating(4)">★</span>
-                        <span class="star" data-rating="3" onclick="setRating(3)">★</span>
-                        <span class="star" data-rating="2" onclick="setRating(2)">★</span>
-                        <span class="star" data-rating="1" onclick="setRating(1)">★</span>
+                <!-- النص + الشعار -->
+                <div class="flex items-center space-x-2">
+                    <span class="text-teal-700 font-medium" data-ar="صمم بحب من" data-en="Made with Love by">صمم بحب من
+                    </span>
+                    <img src="" alt="Ehab Alomawii" class="h-6" />
+                </div>
+            </div>
+            <!-- الملاحظه و التقيم -->
+            <div id="reviewModal" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+                <div class="modal-content bg-orange-50" onclick="event.stopPropagation()">
+                    <button class="close-btn" onclick="closeModal()">×</button>
+
+                    <div class="success-message" data-ar="✓ تم إرسال مراجعتك بنجاح!"
+                        data-en="Yor review has been sent ✓" id="successMessage">
+                        ✓ تم إرسال مراجعتك بنجاح!
                     </div>
 
-                    <p class="text-center text-gray-500 mb-4" id="ratingText" data-ar="اختر تقييمك"
-                        data-en="Select your rating">
-                        اختر تقييمك
+                    <h2 class="text-2xl font-bold text-center mb-2" data-ar="اترك تقييمك" data-en="Leave Your Comment"
+                        style="color: #1a9aae;">
+                        اترك تقييمك
+                    </h2>
+                    <p class="text-center text-gray-600 mb-4" data-ar="نحن نقدر رأيك ونسعى لتحسين خدماتنا"
+                        data-en="We value your feedback and strive to improve our services">
+                        نحن نقدر رأيك ونسعى لتحسين خدماتنا
                     </p>
+                    <!-- المراجعه  -->
+                    <form id="reviewForm" onsubmit="submitReview(event)">
+                        <!-- Star Rating -->
+                        <div class="star-rating">
+                            <span class="star" data-rating="5" onclick="setRating(5)">★</span>
+                            <span class="star" data-rating="4" onclick="setRating(4)">★</span>
+                            <span class="star" data-rating="3" onclick="setRating(3)">★</span>
+                            <span class="star" data-rating="2" onclick="setRating(2)">★</span>
+                            <span class="star" data-rating="1" onclick="setRating(1)">★</span>
+                        </div>
 
-                    <!-- Name Input -->
-                    <input type="text" class="form-input" placeholder="الاسم" id="nameInput" required>
+                        <p class="text-center text-gray-500 mb-4" id="ratingText" data-ar="اختر تقييمك"
+                            data-en="Select your rating">
+                            اختر تقييمك
+                        </p>
 
-                    <!-- Email Input -->
-                    <input type="email" class="form-input" placeholder="البريد الإلكتروني" id="emailInput" required>
+                        <!-- Name Input -->
+                        <input type="text" class="form-input" placeholder="الاسم" id="nameInput" required>
 
-                    <!-- Review Text -->
-                    <textarea class="form-input" placeholder="اكتب مراجعتك هنا..." id="reviewText" required></textarea>
+                        <!-- Email Input -->
+                        <input type="email" class="form-input" placeholder="البريد الإلكتروني" id="emailInput" required>
 
-                    <!-- Submit Button -->
-                    <button type="submit" class="submit-btn" id="submitBtn">
-                        إرسال المراجعة
-                    </button>
-                </form>
+                        <!-- Review Text -->
+                        <textarea class="form-input" placeholder="اكتب مراجعتك هنا..." id="reviewText"
+                            required></textarea>
 
-                <!-- Yalla Plus Footer -->
-                <div class="text-center mt-6 text-gray-500 text-sm">
-                    <div class="flex items-center justify-center gap-2">
-                        <span>Powered by</span>
-                        <div class="flex items-center gap-1">
-                            <span class="text-xl" style="color: #22c55e;">يلا</span>
-                            <span class="font-semibold">plus</span>
+                        <!-- Submit Button -->
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            إرسال المراجعة
+                        </button>
+                    </form>
+
+                    <!-- Yalla Plus Footer -->
+                    <div class="text-center mt-6 text-gray-500 text-sm">
+                        <div class="flex items-center justify-center gap-2">
+                            <span>Powered by</span>
+                            <div class="flex items-center gap-1">
+                                <span class="text-xl" style="color: #22c55e;">يلا</span>
+                                <span class="font-semibold">plus</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- سكربت -->
-        <script src="script.js"></script>
-        <script src="review.js"></script>
-        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-        <script>
-            AOS.init({
-                duration: 900,  // سرعة الحركة (بالملي ثانية)
-                once: true,     // تظهر الحركة مرة وحدة فقط
-            });
-        </script>
+    </div>
+    <!-- سكربت -->
+    <script src="script.js"></script>
+    <script src="review.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 900,  // سرعة الحركة (بالملي ثانية)
+            once: true,     // تظهر الحركة مرة وحدة فقط
+        });
+    </script>
 </body>
 
 </html>
