@@ -56,7 +56,7 @@ async function loadMenuItems() {
           let itemCard = document.createElement("div");
           itemCard.classList.add("mb-6", "px-6");
           itemCard.innerHTML = `
-<div class="flex flex-row items-start p-3 sm:p-4 border-b border-gray-200">
+<div class="flex flex-row items-start p-3 sm:p-4">
     <!-- النصوص -->
     <div class="flex-1 text-right">
         <h2 class="text-base sm:text-xl font-bold text-teal-700" data-ar="${
