@@ -4,7 +4,7 @@ require_once "config.php";
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Origin: *");
 
-$sql = "SELECT * FROM categories ORDER BY id DESC";
+$sql = "SELECT * FROM categories ORDER BY id ASC";
 $result = $conn->query($sql);
 
 $categories = [];
