@@ -4,268 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feed Pizza</title>
+    <title>نافذة مسببات الحساسية</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="review.css">
-
 </head>
 
-<body class="text-gray-800 font-tahoma flex justify-center">
-    <div class="m-auto w-100 bg-orange-50 h-screen overflow-y-auto">
+<body class="bg-gray-100 flex items-center justify-center h-screen">
 
-        <!-- Header -->
-        <header class="relative text-center">
-            <img src="assets/header.jpg" alt="cover" class="w-full h-[220px] object-cover">
+    <!-- زر فتح النافذة -->
+    <button id="openModal"
+        class="bg-teal-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-teal-700 active:scale-95 transition">
+        إظهار مسببات الحساسية
+    </button>
 
-            <!-- اللوجو الدائري في المنتصف -->
-            <div
-                class="absolute bottom-0 left-1/2 translate-y-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-teal-700 border-4 border-[#f3eedd] flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                Feed
-            </div>
-        </header>
+    <!-- النافذة المنبثقة -->
+    <div id="modal"
+        class="fixed inset-0 bg-black/40 flex items-end justify-center opacity-0 pointer-events-none transition-all duration-300">
 
+        <!-- محتوى النافذة -->
+        <div
+            class="bg-amber-50 w-full max-w-md rounded-t-3xl p-6 shadow-lg transform translate-y-full transition-all duration-500 ease-out">
 
-        <!-- Info / Title -->
-        <div class="mt-16 text-center">
-
-            <!-- زر اللغة -->
-            <div class="flex justify-end px-6 mb-2 lang-toggle">
-                <button onclick="toggleLang()" class="flex items-center gap-1 text-teal-700">
-                    <span id="langBtnText">English</span>
-                    <i class="fas fa-globe"></i>
-                </button>
+            <!-- رأس النافذة -->
+            <div class="flex justify-between items-center border-b border-teal-300 pb-3 mb-4">
+                <h2 class="text-teal-900 font-bold text-lg">🩺 مسببات الحساسية</h2>
+                <button id="closeModal" class="text-teal-600 font-bold hover:text-red-600 transition-colors">إغلاق
+                    ✖</button>
             </div>
 
-            <!-- اسم المطعم -->
-            <h2 id="title" class="text-teal-700 text-2xl font-semibold text-center flex justify-center my-4"
-                data-ar="فيد بيتزا" data-en="Feed Pizza">
-                فيد بيتزا
-            </h2>
-
-
-
-            <!-- أيقونات -->
-            <div class="flex justify-center gap-6 mt-4 text-2xl text-black">
-                <a href="#" class="hover:text-teal-700"><i class="fas fa-star"></i></a>
-                <a href="#" class="hover:text-teal-700"><i class="fas fa-map-marker-alt"></i></a>
-                <a href="#" class="hover:text-teal-700"><i class="fab fa-tiktok"></i></a>
-                <a href="#" class="hover:text-teal-700"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-
-        <!-- التصنيفات -->
-        <div class="sticky flex justify-center top-0 overflow-x-auto bg-orange-50/50 rounded z-10">
-            <div class="flex justify-center text-center space-x-6 px-4 py-6 w-max">
-
-                <!-- البيتزا -->
-                <a href="#pizza_link">
-                    <div class="flex flex-col items-center text-center cursor-pointer w-24">
-                        <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
-                            <img src="assets/pizza1.svg" alt="بيتزا" class="w-12 h-12">
-                        </div>
-                        <span class="mt-2 text-sm" data-ar="البيتزا" data-en="Pizza">البيتزا</span>
+            <!-- محتوى النافذة -->
+            <div class="space-y-3">
+                <div
+                    class="flex items-center justify-between bg-white p-3 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div>
+                        <h3 class="font-medium text-teal-900">مكسرات</h3>
+                        <p class="text-sm text-teal-600">مثل الفستق، الكاجو، واللوز</p>
                     </div>
-                </a>
-
-                <!-- الباستا -->
-                <a href="#pasta_link">
-                    <div class="flex flex-col items-center text-center cursor-pointer w-24">
-                        <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
-                            <img src="assets/pasta1.svg" alt="الباستا" class="w-12 h-12">
-                        </div>
-                        <span class="mt-2 text-sm" data-ar="الباستا" data-en="Pasta">الباستا</span>
-                    </div>
-                </a>
-
-
-                <!-- السلطات -->
-                <a href="#sald_link">
-                    <div class="flex flex-col items-center text-center cursor-pointer w-24">
-                        <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
-                            <i class="fa-solid fa-bowl-food text-white text-4xl"></i>
-                        </div>
-                        <span class="mt-2 text-sm" data-ar="السلطات" data-en="Salads">السلطات</span>
-                    </div>
-                </a>
-
-                <!-- المشروبات الغازية -->
-                <a href="#soda_link">
-                    <div class="flex flex-col items-center text-center cursor-pointer w-24">
-                        <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
-                            <i class="fa-solid fa-wine-bottle text-white text-4xl"></i>
-                        </div>
-                        <span class="mt-2 text-sm text-center" data-ar="المشروبات" data-en="Soft Drinks"></span>
-                    </div>
-                </a>
-                <!-- الحلويات -->
-                <div class="flex flex-col items-center text-center cursor-pointer w-24">
-                    <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
-                        <i class="fa-solid fa-cake-candles text-white text-4xl"></i>
-                    </div>
-                    <span class="mt-2 text-sm" data-ar="الحلويات" data-en="Desserts">الحلويات</span>
+                    <div class="bg-teal-600 text-white p-2 rounded-full text-lg">🥜</div>
                 </div>
 
-                <!-- الصوص -->
-                <div class="flex flex-col items-center text-center cursor-pointer w-24">
-                    <div class="bg-teal-700 w-20 h-20 rounded-full flex justify-center items-center">
-                        <img src="assets/sauce.svg" alt="صوص" class="w-12 h-12">
+                <div
+                    class="flex items-center justify-between bg-white p-3 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div>
+                        <h3 class="font-medium text-teal-900">زبدة الفول السوداني</h3>
+                        <p class="text-sm text-teal-600">منتج مشتق من الفول السوداني</p>
                     </div>
-                    <span class="mt-2 text-sm" data-ar="صوص" data-en="Sauces">صوص</span>
+                    <div class="bg-teal-600 text-white p-2 rounded-full text-lg">🥪</div>
                 </div>
 
-            </div>
-        </div>
-
-        <!-- قسم القائمة -->
-        <div class="max-w-2xl mx-auto mb-6">
-            <div id="#" class="w-full py-3 px-6 flex justify-start">
-                <span class="text-2xl font-bold text-black" data-ar="البيتزا" data-en="Pizza">البيتزا</span>
-            </div>
-            <div id="menu-pizza" class=""></div>
-            <div id="pasta_link" class="w-full py-3 px-6 flex justify-start">
-                <span class="text-2xl font-bold text-black" data-ar="الباستا" data-en="Pasta">الباستا</span>
-            </div>
-
-            <div id="menu-pasta" class="scroll-mt-24"></div>
-            <div id="sald_link" class="w-full py-3 px-6 flex justify-start">
-                <span class="text-2xl font-bold text-black" data-ar="السلطات و المقبلات"
-                    data-en="Salads and Appetizers">السلطات و المقبلات</span>
-            </div>
-            <div id="menu-salad"></div>
-            <div id="soda_link" class="w-full py-3 px-6 flex justify-start">
-                <span class="text-2xl font-bold text-black" data-ar="المشروبات الغازيه" data-en="Soft Drinks">
-                    المشروبات الغازيه</span>
-            </div>
-            <div id="menu-soda"></div>
-
-        </div>
-        <div class="flex flex-col justify-center items-center text-teal-700 text-xl font-bold">
-            <hr class="border-teal-700 w-full">
-            <div class="flex items-center gap-2 my-10">
-                <span
-                    class="text-teal-700 bg-teal-300 rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold">
-                    i
-                </span>
-                <h1 data-ar="مسببات الحساسية" data-en="Allergens">مسببات الحساسية</h1>
-            </div>
-            <hr class="border-teal-700 w-full">
-        </div>
-        <div class="flex justify-between items-center px-10 py-10">
-            <!-- الزر -->
-            <button onclick="openModal()" data-ar="الملاحظات و التقيم" data-en="Leave Review"
-                class="bg-white text-teal-700  text-xl px-8 py-4 rounded-full shadow">
-                الملاحظات و التقيم
-            </button>
-
-            <!-- النص + الشعار -->
-            <div class="flex items-center space-x-2">
-                <span class="text-teal-700 font-medium" data-ar="صمم بحب من" data-en="Made with Love by">صمم بحب من
-                </span>
-                <img src="" alt="Ehab Alomawii" class="h-6" />
-            </div>
-        </div>
-        <!-- الملاحظه و التقيم -->
-        <div id="reviewModal" class="modal-overlay" onclick="closeModalOnOverlay(event)">
-            <div class="modal-content bg-orange-50" onclick="event.stopPropagation()">
-                <button class="close-btn" onclick="closeModal()">×</button>
-
-                <div class="success-message" data-ar="✓ تم إرسال مراجعتك بنجاح!" data-en="Yor review has been sent ✓"
-                    id="successMessage">
-                    ✓ تم إرسال مراجعتك بنجاح!
-                </div>
-
-                <h2 class="text-2xl font-bold text-center mb-2" data-ar="اترك تقييمك" data-en="Leave Your Comment"
-                    style="color: #1a9aae;">
-                    اترك تقييمك
-                </h2>
-                <p class="text-center text-gray-600 mb-4" data-ar="نحن نقدر رأيك ونسعى لتحسين خدماتنا"
-                    data-en="We value your feedback and strive to improve our services">
-                    نحن نقدر رأيك ونسعى لتحسين خدماتنا
-                </p>
-                <!-- المراجعه  -->
-                <form id="reviewForm" onsubmit="submitReview(event)">
-                    <!-- Star Rating -->
-                    <div class="star-rating">
-                        <span class="star" data-rating="5" onclick="setRating(5)">★</span>
-                        <span class="star" data-rating="4" onclick="setRating(4)">★</span>
-                        <span class="star" data-rating="3" onclick="setRating(3)">★</span>
-                        <span class="star" data-rating="2" onclick="setRating(2)">★</span>
-                        <span class="star" data-rating="1" onclick="setRating(1)">★</span>
+                <div
+                    class="flex items-center justify-between bg-white p-3 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div>
+                        <h3 class="font-medium text-teal-900">قمح</h3>
+                        <p class="text-sm text-teal-600">مثل الخبز، المعكرونة، الدقيق</p>
                     </div>
-
-                    <p class="text-center text-gray-500 mb-4" id="ratingText" data-ar="اختر تقييمك"
-                        data-en="Select your rating">
-                        اختر تقييمك
-                    </p>
-
-                    <!-- Name Input -->
-                    <input type="text" class="form-input" placeholder="الاسم" id="nameInput" required>
-
-                    <!-- Email Input -->
-                    <input type="email" class="form-input" placeholder="البريد الإلكتروني" id="emailInput" required>
-
-                    <!-- Review Text -->
-                    <textarea class="form-input" placeholder="اكتب مراجعتك هنا..." id="reviewText" required></textarea>
-
-                    <!-- Submit Button -->
-                    <button type="submit" class="submit-btn" id="submitBtn">
-                        إرسال المراجعة
-                    </button>
-                </form>
-
-                <!-- Yalla Plus Footer -->
-                <div class="text-center mt-6 text-gray-500 text-sm">
-                    <div class="flex items-center justify-center gap-2">
-                        <span>Powered by</span>
-                        <div class="flex items-center gap-1">
-                            <span class="text-xl" style="color: #22c55e;">يلا</span>
-                            <span class="font-semibold">plus</span>
-                        </div>
-                    </div>
+                    <div class="bg-teal-600 text-white p-2 rounded-full text-lg">🌾</div>
                 </div>
             </div>
         </div>
-        <!-- سكربت -->
-        <script src="script.js"></script>
-        <script src="review.js"></script>
-</body>
-
-</html>
-
-<!doctype html>
-<html lang="ar" dir="rtl">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Simple Top Pill (Tailwind)</title>
-    <!-- Tailwind CDN (good for prototype) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* نقطة صغيرة: نستخدم هنا قيمة تقريبية للانحناء الكبير أسفل اللوحة */
-        .curved-bottom {
-            border-bottom-left-radius: 6rem;
-            /* تعديل حسب الحاجة */
-            border-bottom-right-radius: 6rem;
-        }
-    </style>
-</head>
-
-<body class="bg-[#f6f1e6] antialiased">
-    <!-- الحاوية الرئيسية -->
-    <div
-        class="w-full min-h-[140px] curved-bottom bg-gradient-to-b from-[#f9f6ee] to-[#f3ecd9] shadow-inner flex items-start justify-center pt-8">
-        <!-- الشريط الصغير (the pill) -->
-        <div class="w-28 h-2.5 bg-[#5f4637] rounded-full shadow-md"></div>
     </div>
 
-    <!-- مثال لصفحة أسفل الهيدر -->
-    <main class="p-6">
-        <p class="text-gray-600">المحتوى تحت الرأس — حط اللي تبيه هنا.</p>
-    </main>
+    <script>
+        const openModal = document.getElementById('openModal');
+        const closeModal = document.getElementById('closeModal');
+        const modal = document.getElementById('modal');
+        const modalContent = modal.querySelector('div');
+
+        openModal.addEventListener('click', () => {
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('translate-y-full');
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalContent.classList.add('translate-y-full');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modalContent.classList.add('translate-y-full');
+            }
+        });
+    </script>
+
 </body>
 
 </html>

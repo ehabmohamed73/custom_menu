@@ -5,14 +5,12 @@
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
     <title>Feed Pizza</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="review.css">
-
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <!-- AOS JS -->
@@ -53,9 +51,6 @@
                         data-ar="فيد بيتزا" data-en="Feed Pizza">
                         فيد بيتزا
                     </h2>
-
-
-
                     <!-- أيقونات -->
                     <div class="flex justify-center gap-6 mt-4 text-2xl text-black">
                         <a href="#" class="hover:text-teal-700"><i class="fas fa-star"></i></a>
@@ -77,9 +72,6 @@
                         <!-- المهم: اضف id مطابق للرابط، و اضف scroll-mt-24 -->
 
                     </div>
-
-
-
                     <div class="flex flex-col justify-center items-center text-teal-700 text-xl font-bold">
                         <hr class="border-teal-700 w-full">
                         <div class="flex items-center gap-2 my-10">
@@ -87,7 +79,7 @@
                                 class="text-teal-700 bg-teal-300 rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold">
                                 i
                             </span>
-                            <h1 data-ar="مسببات الحساسية" data-en="Allergens">مسببات الحساسية</h1>
+                            <button id="openAllergenModal" data-ar="مسببات الحساسية" data-en="Allergens">
                         </div>
                         <hr class="border-teal-700 w-full">
                     </div>
@@ -175,10 +167,45 @@
             </div>
         </div>
     </div>
+    <!-- نافذة مسببات الحساسية -->
+    <div id="modal"
+        class="fixed z-100 inset-0 bg-[rgba(241,233,207,0.87)] flex items-end justify-center opacity-0 pointer-events-none transition-all duration-300">
+        <!-- محتوى النافذة -->
+        <div id="modalContent"
+            class="bg-[rgba(241,233,207,0.87)] w-full h-100 max-w-md rounded-t-3xl p-6 shadow-lg transform translate-y-full transition-all duration-500 ease-out">
+
+            <!-- رأس النافذة -->
+            <div class="flex justify-between items-center border-b border-teal-300 pb-3 mb-4">
+                <h2 class="text-teal-900 font-bold text-lg" data-ar=" مسببات الحساسية" data-en="Allergens"> مسببات
+                    الحساسية</h2>
+                <button id="closeModal" class="text-teal-600 font-bold hover:text-red-600 transition-colors"
+                    data-ar="اغلاق" data-en="close">إغلاق
+                    ✖</button>
+            </div>
+
+            <!-- محتوى النافذة -->
+            <div class="space-y-3">
+                <div class="flex items-center justify-start  p-3 ">
+                    <div class="bg-teal-600 text-white p-2 rounded-full text-lg"><img src="assets/ehab.png"
+                            class="w-10 h-10" alt="">
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-teal-900 px-4" data-ar="مكسرات" data-en="مكسرات">مكسرات</h3>
+                        <p class="text-sm text-teal-600 px-4" data-ar="ثل الفستق، الكاجو، واللو" data-en="">مثل الفستق،
+                            الكاجو، واللوز</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <!-- سكربت -->
     <script src="script.js"></script>
     <script src="review.js"></script>
     <script src="loading.js"></script>
+    <script src="alargic.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({

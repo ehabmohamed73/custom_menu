@@ -6,5 +6,5 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     loader.classList.add("hidden");
     content.classList.remove("hidden");
-  }, 400); // بعد نصف ثانية تختفي شاشة التحميل بسلاسة
+  }, 900); // بعد نصف ثانية تختفي شاشة التحميل بسلاسة
 });
