@@ -31,6 +31,32 @@ function loadCategories() {
     })
     .catch((err) => console.error(err));
 }
+
+//========================= تحميل مسببات الحساسية===========================
+const allergyContainer = document.getElementById("allergiesContainer");
+async function loadAllergies() {
+  fetch("api/get_allergens.php")
+    .then((res) => res.json())
+    .then((data) => {
+      allergyContainer.innerHTML = "";
+      data.forEach((aller) => {
+        let card = document.createElement("div");
+        card.className = "flex items-center gap-2  p-3 w-full";
+        card.innerHTML = `
+        <div class="bg-teal-600 text-white p-2 rounded-full text-[14px]">
+          <img src="http://localhost/menu_dashboard/api/${aller.image_url}" class="w-10 h-10" alt="${aller.name_ar}">
+        </div>
+        <div>
+          <h3 class="text-[14px] text-teal-900 px-4" data-ar="${aller.name_ar}" data-en="${aller.name_en}">${aller.name_ar}</h3>
+           <p class="text-[10px] text-teal-600 px-4" data-ar="${aller.description_ar}" data-en="${aller.description_en}">${aller.description_ar}</p>
+        </div>
+        `;
+        allergyContainer.appendChild(card);
+      });
+    })
+    .catch((err) => console.error(err));
+}
+
 // LOAD MENU ITEMS ======== اصناف المنيو
 const frontMenuItems = document.getElementById("front-items");
 
@@ -137,4 +163,5 @@ window.addEventListener("DOMContentLoaded", applyLanguage);
 (async () => {
   await loadCategories();
   await loadMenuItems();
+  await loadAllergies();
 })();
